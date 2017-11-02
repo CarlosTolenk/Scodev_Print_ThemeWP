@@ -1,0 +1,121 @@
+/*
+Theme name: Scodev-Print
+Theme URI: nicomultimediap.com
+Author: CarlosTolenk
+Author URI: smartcodev.com
+Version: 1.0
+Licence: GNU General Public Licence or Later
+Tags: html5, css3, multimedia, printer, diseño, first mobile, resposive,
+Text Domain: scodev
+*/
+
+
+/**** Menu Social Top Header  ****/
+
+.sr-text{
+  display: none;
+}
+
+nav.menu-social ul li a:before {
+  font-family: 'FontAwesome'!important;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
+  content: '\f09a';
+  font-size: 20px;
+  -webkit-font-smoothing:antialiased;
+}
+
+nav.menu-social li a[href*="facebook.com"]::before {
+  content: '\f09a';
+}
+nav.menu-social ul li a[href*="twitter.com"]::before {
+  content: '\f099';
+}
+nav.menu-social li a[href*="youtube.com"]::before {
+  content: '\f16a';
+}
+nav.menu-social li a[href*="instagram.com"]::before {
+  content: '\f16d';
+}
+
+/***** Menu Principal *******/
+section.trust-w{
+  padding: 60px 0px !important;
+  /*Tfix*/
+  background: #eeeeee;
+}
+.trust-w .block-trust{
+ text-align:center;
+}
+.trust-w .tr-icon{
+  display:inline-block!important;
+  width: 125px;
+  height: 125px;
+  cursor:pointer;
+  border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  vertical-align: 50%;
+  background:#25bce9!important;
+  border: 8px solid transparent;
+  transition: all 0.3s ease-out 0s;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+}
+.trust-w .tr-icon:hover{
+	border-color:#ade8fa;
+	transition: all 0.3s ease-out 0s;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+}
+.trust-w .tr-icon i{
+  color: #ffffff!important;
+  font-size: 48px;
+  line-height: 115px;
+}
+.trust-w .tr-line{
+	width:70px;
+	height:1px;
+	display:inline-block!important;
+	background:#c2c2c2;
+}
+.trust-w .tr-text{
+  margin-top: 24px!important;
+}
+.trust-w .tr-text h3{
+  font-size: 18px;
+  font-weight: 500;
+  color: #444444!important;
+  margin-bottom: 2px;
+}
+.trust-w .tr-text p{
+  font-size: 14px;
+  color: #888888!important;
+  line-height: 20px;
+  margin-top:7px;
+  font-weight:400;
+}
+.trust-w .tr-text a{
+  margin-top: 18px;
+}
+
+/* btn-read-more */
+.btn-readmore{
+	border: 1px solid #25bce9;
+	border-radius: 3px;
+	color: #25bce9;
+	display:inline-block;
+	font-weight: 400;
+	padding: 9px 15px;
+	text-transform: uppercase;
+	font-size:12px;
+}
+.btn-readmore:hover{
+	background:#25bce9;
+	color:#fff;
+}
