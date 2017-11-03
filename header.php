@@ -4,12 +4,12 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
 	<meta name="description" content="Printing template">
-  <title>Printing- Home page</title>
+  <title> <?php wp_title('');?> <?php if(wp_title('', false)) {echo ' : ';}?> <?php bloginfo('name'); ?>  </title>
 	<!--Add css lib-->
    <link href='http://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Arimo:500,300,700,400' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:500,300,700,400' rel='stylesheet' type='text/css'>
-  
+
   <?php wp_head(); ?>
 </head>
 <body>
@@ -189,8 +189,4 @@
 				</div>
 			</div>
 		</section><!--Main Header: End-->
-
-
-
-
 	</header><!--Header: End-->

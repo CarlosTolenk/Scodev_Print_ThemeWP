@@ -4,49 +4,37 @@
 <!--Main index : Begin-->
 <main class="main index">
   <!-- Begin Top Slide-->
+
+
   <section class="home-slidershow">
     <div class="slide-show">
       <div class="vt-slideshow">
+
+        <?php $args = array(
+          'post_type' => 'Slider',
+          'orderby' => 'date',
+          'order' => 'DESC',
+          'posts_per_page' => -1
+        ); ?>
+
+          <?php $slider = new WP_Query($args); ?>
         <ul>
-          <li class="slide1" data-transition="random" ><img src=" <?php echo get_template_directory_uri(); ?>/images/slider/home/bg_slider_1.jpg" alt="bg_slider_1"/>
-            <div class="tp-caption lfr" data-x="right"  data-hoffset="-56" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">Flyers</span> & Leaflets</span></div>
-            <div class="tp-caption lfb" data-x="right"  data-hoffset="-15" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
-              <span class="style2">
-                Our A5 flyers and leaflets are our bestselling size.<br>
-                This is because they're perfect for potential prospects<br>
-                to carry around and are extremely cost effective. We<br>
-                currently have an offer of 1000 flyers and leaflets<br>
-                for only &pound; 24!
-              </span>
-            </div>
-            <div class="tp-caption lfr" data-x="right" data-hoffset="-315" data-y="375" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="#">buy now</a></div>
-          </li>
-          <li class="slide2" data-transition="random" ><img src="<?php echo get_template_directory_uri(); ?>/images/slider/home/bg_slider_2.jpg" alt="bg_slider_2" />
-            <div class="tp-caption lfr" data-x="left"  data-hoffset="" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">Flyers</span> & Leaflets</span></div>
-            <div class="tp-caption lfb" data-x="left"  data-hoffset="" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
-              <span class="style2">
-                Our A5 flyers and leaflets are our bestselling size.<br>
-                This is because they're perfect for potential prospects<br>
-                to carry around and are extremely cost effective. We<br>
-                currently have an offer of 1000 flyers and leaflets<br>
-                for only &pound; 24!
-              </span>
-            </div>
-            <div class="tp-caption lfr" data-x="left" data-y="367" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="#">buy now</a></div>
-          </li>
-          <li class="slide3" data-transition="random" ><img src=" <?php echo get_template_directory_uri(); ?>/images/slider/home/bg_slider_3.jpg" alt="bg_slider_3" />
-            <div class="tp-caption lft" data-x="left"  data-hoffset="" data-y="170" data-start="800" data-speed="2000" data-endspeed="300"><span class="style1"><span class="textcolor">Flyers</span> & Leaflets</span></div>
-            <div class="tp-caption lfb" data-x="left"  data-hoffset="" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
-              <span class="style2">
-                Our A5 flyers and leaflets are our bestselling size.<br>
-                This is because they're perfect for potential prospects<br>
-                to carry around and are extremely cost effective. We<br>
-                currently have an offer of 1000 flyers and leaflets<br>
-                for only &pound; 24!
-              </span>
-            </div>
-            <div class="tp-caption lfl" data-x="left" data-hoffset="" data-y="365" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="#">buy now</a></div>
-          </li>
+          <?php while($slider->have_posts()): $slider->the_post(); ?>
+            <li class="slide1" data-transition="random">
+              <?php $imagen_destacada = get_field( 'imagen_destacada' ); ?>
+                <?php if ( $imagen_destacada ) { ?>
+                	<?php echo wp_get_attachment_image( $imagen_destacada, 'full' ); ?>
+                <?php } ?>
+              <div class="tp-caption lfr" data-x="right"  data-hoffset="-56" data-y="170" data-start="800" data-speed="2000" data-endspeed="300">
+              <span class="style1"><span class="textcolor"><?php the_field( 'titulo' ); ?></span> & Azul</span></div>
+              <div class="tp-caption lfb" data-x="right"  data-hoffset="-15" data-y="225" data-start="800" data-speed="2000" data-endspeed="300">
+                <div class="style2">
+                  <?php the_field( 'informacion_' ); ?>
+                </div>
+              </div>
+              <div class="tp-caption lfl" data-x="left" data-hoffset="" data-y="365" data-start="1300" data-speed="2000" data-easing="easeInOutQuint" data-endspeed="300"><a class="btn-sn" href="<?php the_field( 'accion' ); ?>">buy now</a></div>
+            </li>
+          <?php endwhile; wp_reset_postdata(); ?>
         </ul>
       </div>
     </div>

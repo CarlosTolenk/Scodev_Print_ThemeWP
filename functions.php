@@ -88,6 +88,10 @@ function scodev_scripts(){
 }
 
 
+  //Tamaños de imagenes
+  add_theme_support( 'post_thumbnails');
+  add_image_size('slider_header', 1920, 598, true);
+
 
 
   //hokes style and js
