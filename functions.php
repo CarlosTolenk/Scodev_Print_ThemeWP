@@ -1,6 +1,6 @@
 <?php
   function scodev_styles() {
-    //Style
+    //************** Style ***************************//
 
     //Registrar los estilos
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css');
@@ -35,6 +35,9 @@
     wp_enqueue_style('style');
 
 }
+
+
+ //**************** Link Javascript ************************/
 
 function scodev_scripts(){
   //Registrar Js
@@ -119,7 +122,7 @@ function scodev_scripts(){
   add_filter('nav_menu_css_class', 'agregar_clases_li', 1, 4);
 
 
-// Custom Post Type Slider
+//************* Custom Post Type Slider ************* //
 
 if ( ! function_exists('slider_header') ) {
 
@@ -179,6 +182,69 @@ function slider_header() {
 
 }
 add_action( 'init', 'slider_header', 0 );
+
+}
+
+
+//******** Custom Post Type de Servicios *************//
+if ( ! function_exists('category_service') ) {
+
+// Register Custom Post Type
+function category_service() {
+
+	$labels = array(
+		'name'                  => _x( 'Servicios', 'Post Type General Name', 'scodev' ),
+		'singular_name'         => _x( 'Servicio', 'Post Type Singular Name', 'scodev' ),
+		'menu_name'             => __( 'Servicios', 'scodev' ),
+		'name_admin_bar'        => __( 'Servicios', 'scodev' ),
+		'archives'              => __( 'Servicios', 'scodev' ),
+		'attributes'            => __( 'Item Attributes', 'scodev' ),
+		'parent_item_colon'     => __( '', 'scodev' ),
+		'all_items'             => __( 'Todos los servicios', 'scodev' ),
+		'add_new_item'          => __( 'Nuevo servicio', 'scodev' ),
+		'add_new'               => __( 'Agregar nuevo servicio', 'scodev' ),
+		'new_item'              => __( 'New service', 'scodev' ),
+		'edit_item'             => __( 'Edit service', 'scodev' ),
+		'update_item'           => __( 'Update service', 'scodev' ),
+		'view_item'             => __( 'View service', 'scodev' ),
+		'view_items'            => __( 'View services', 'scodev' ),
+		'search_items'          => __( 'Search service', 'scodev' ),
+		'not_found'             => __( 'Not found', 'scodev' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
+		'featured_image'        => __( 'Featured Image', 'scodev' ),
+		'set_featured_image'    => __( 'Set featured image', 'scodev' ),
+		'remove_featured_image' => __( 'Remove featured image', 'scodev' ),
+		'use_featured_image'    => __( 'Use as featured image', 'scodev' ),
+		'insert_into_item'      => __( 'Insert into item', 'scodev' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'scodev' ),
+		'items_list'            => __( 'Items list', 'scodev' ),
+		'items_list_navigation' => __( 'Items list navigation', 'scodev' ),
+		'filter_items_list'     => __( 'Filter items list', 'scodev' ),
+	);
+	$args = array(
+		'label'                 => __( 'Servicio', 'scodev' ),
+		'description'           => __( 'Los Servicios que ofrecemos', 'scodev' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-welcome-learn-more',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'service_category', $args );
+
+}
+add_action( 'init', 'category_service', 0 );
 
 }
 

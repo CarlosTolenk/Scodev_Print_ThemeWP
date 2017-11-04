@@ -4,8 +4,6 @@
 <!--Main index : Begin-->
 <main class="main index">
   <!-- Begin Top Slide-->
-
-
   <section class="home-slidershow">
     <div class="slide-show">
       <div class="vt-slideshow">
@@ -18,7 +16,7 @@
         ); ?>
 
           <?php $slider = new WP_Query($args); ?>
-        <ul>
+         <ul>
           <?php while($slider->have_posts()): $slider->the_post(); ?>
             <li class="slide1" data-transition="random">
               <?php $imagen_destacada = get_field( 'imagen_destacada' ); ?>
@@ -187,7 +185,7 @@
                   <i class="fa fa-arrow-circle-o-up"></i>
                 </div>
                 <div class="print-title">
-                  <a href="#">Upload your design</a>
+                  <a href="#">Upload your design or to create</a>
                 </div>
                 <div class="print-number">
                   <span>02</span>
@@ -279,70 +277,36 @@
           <span class="sub-title">Choose the design path that is right before upload file</span>
         </div>
         <div class="or-service-w">
+
+          <?php $args = array(
+            'post_type' => 'service_category',
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'posts_per_page' => -1
+          ); ?>
+
+
+          <?php $service = new WP_Query($args); ?>
+
+          <?php while($service->have_posts()): $service->the_post(); ?>
           <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-            <div class="or-image">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/1.png" alt="service-01"/>
-              </a>
-            </div>
-            <div class="or-title">
-              <a href="#">graphic Design</a>
-            </div>
-            <div class="or-text">
-              <p>
-                let us design your next print project!
-              </p>
-            </div>
-            <a href="#" class="btn-readmore order-now">Order now</a>
+              <div class="or-image">
+                <a href="#">
+                  <?php if ( get_field( 'imagen_destacada') ) { ?>
+                  	<img src="<?php the_field( 'imagen_destacada' ); ?>" />
+                  <?php } ?>
+                </a>
+              </div>
+              <div class="or-title">
+                <a href="#"><?php the_title(); ?></a>
+              </div>
+              <div class="or-text">
+                  <?php the_content(); ?>
+              </div>
+              <a href="<?php the_field( 'link_' ); ?>" class="btn-readmore order-now">Order now</a>
           </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-            <div class="or-image">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/2.png" alt="service-02"/>
-              </a>
-            </div>
-            <div class="or-title">
-              <a href="#">Mailing</a>
-            </div>
-            <div class="or-text">
-              <p>
-                Delivery, we can hand it all for you!
-              </p>
-            </div>
-            <a href="#" class="btn-readmore order-now">Order now</a>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-            <div class="or-image">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/3.png" alt="service-03"/>
-              </a>
-            </div>
-            <div class="or-title">
-              <a href="#">custom prints</a>
-            </div>
-            <div class="or-text">
-              <p>
-                we'll bring all your creative ideas to life!
-              </p>
-            </div>
-            <a href="#" class="btn-readmore order-now">Order now</a>
-          </div>
-          <div class="col-md-3 col-sm-6 col-xs-6 or-block">
-            <div class="or-image">
-              <a href="#">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/4.png" alt="service-04"/>
-              </a>
-            </div>
-            <div class="or-title">
-              <a href="#">free file check</a>
-            </div>
-            <div class="or-text">
-              <p>
-                we'll if your file is ready to print!
-              </p>
-            </div>
-            <a href="#" class="btn-readmore order-now">Order now</a>
-          </div>
+          <?php endwhile; wp_reset_postdata(); ?>
+
         </div>
       </div>
     </div>
