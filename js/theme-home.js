@@ -99,9 +99,11 @@
 
 
 		if(checkWidths < 768){
+      var texto = $('#dona-cantidad').text();
+      var cantidad =  parseInt(texto);
 			var doughnutData = [
-				{value:90,color:"#e92890"},
-				{value:100-90,color:"rgba(0,0,0,0)"}
+				{value:cantidad,color:"#e92890"},
+				{value:100-cantidad,color:"rgba(0,0,0,0)"}
 			];
 		$("#myDoughnut").doughnutit({
 				dnData: doughnutData,
@@ -114,14 +116,17 @@
 				dnShowText: true,
 				dnFontSize: '30px',
 				dnFontColor: "#e92890",
-				dnText: '90%',
+				dnText: cantidad + '%',
 				dnFontOffset:20,
-				dnStartAngle: 90,
+				dnStartAngle: 95,
 				dnCounterClockwise: false,
 			});// End Doughnut
+
+      var texto = $('#dona2-cantidad').text();
+      var cantidad =  parseInt(texto);
 			var doughnutData = [
-				{value:75,color:"#fbc443"},
-				{value:100-75,color:"rgba(0,0,0,0)"}
+				{value:cantidad,color:"#fbc443"},
+				{value:100-cantidad,color:"rgba(0,0,0,0)"}
 			];
 			$( "#myDoughnut2" ).doughnutit({
 				dnData: doughnutData,
@@ -135,13 +140,16 @@
 				dnFontOffset:20,
 				dnFontSize: '30px',
 				dnFontColor: "#fbc443",
-				dnText: '75%',
+				dnText: cantidad + '%',
 				dnStartAngle: 90,
 				dnCounterClockwise: false,
 			});// End Doughnut
+
+      var texto = $('#dona3-cantidad').text();
+      var cantidad =  parseInt(texto);
 			var doughnutData = [
-				{value:80,color:"#25bce9"},
-				{value:100-80,color:"rgba(0,0,0,0)"}
+				{value:cantidad,color:"#25bce9"},
+				{value:100-cantidad,color:"rgba(0,0,0,0)"}
 			];
 			$( "#myDoughnut3" ).doughnutit({
 				dnData: doughnutData,
@@ -155,13 +163,16 @@
 				dnShowText: true,
 				dnFontSize: '30px',
 				dnFontColor: "#25bce9",
-				dnText: '80%',
+				dnText: cantidad + '%',
 				dnStartAngle: 90,
 				dnCounterClockwise: false,
 			});
+
+      var texto = $('#dona4-cantidad').text();
+      var cantidad =  parseInt(texto);
 			var doughnutData = [
-				{value:65,color:"#94eae3"},
-				{value:100-65,color:"rgba(0,0,0,0)"}
+				{value:cantidad,color:"#94eae3"},
+				{value:100-cantidad,color:"rgba(0,0,0,0)"}
 			];
 			$( "#myDoughnut4" ).doughnutit({
 				dnData: doughnutData,
@@ -175,7 +186,7 @@
 				dnShowText: true,
 				dnFontSize: '30px',
 				dnFontColor: "#94eae3",
-				dnText: '65%',
+				dnText: cantidad + '%',
 				dnStartAngle: 90,
 				dnCounterClockwise: false,
 			});
@@ -208,7 +219,7 @@
 					dnCounterClockwise: false,
 				});// End Doughnut
 				var doughnutData = [
-					{value:75,color:"#ffa63e"},
+					{value:85,color:"#ffa63e"},
 					{value:100-75,color:"rgba(0,0,0,0)"}
 				];
 				$( "#myDoughnut2" ).doughnutit({

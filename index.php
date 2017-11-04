@@ -232,6 +232,7 @@
         <div class="block-capabititie-w">
           <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
             <div class="block-mydoughnut" id="myDoughnut"> </div>
+            <span id="dona-cantidad" style="display: none">95</span>
             <h2 class="title">huge quantity</h2>
             <div class="decs">
             <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
@@ -239,6 +240,7 @@
           </div>
           <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
             <div class="block-mydoughnut" id="myDoughnut2"> </div>
+            <span id="dona2-cantidad" style="display: none">75</span>
             <h2 class="title">on Time</h2>
             <div class="decs">
             <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
@@ -246,6 +248,7 @@
           </div>
           <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
             <div class="block-mydoughnut" id="myDoughnut3"> </div>
+            <span id="dona3-cantidad" style="display: none">90</span>
             <h2 class="title">True Color</h2>
             <div class="decs">
             <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
@@ -253,6 +256,7 @@
           </div>
           <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
             <div class="block-mydoughnut" id="myDoughnut4"> </div>
+            <span id="dona4-cantidad" style="display: none">72</span>    
             <h2 class="title">fast Delivery</h2>
             <div class="decs">
             <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
