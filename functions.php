@@ -122,6 +122,19 @@ function scodev_scripts(){
   add_filter('nav_menu_css_class', 'agregar_clases_li', 1, 4);
 
 
+
+
+
+
+//************** Custom after theme confirgure**********//
+
+function custom_theme_setup(){
+
+  add_theme_support( 'post-thumbnails' );
+
+}
+add_action('after_setup_theme', 'custom_theme_setup');
+
 //************* Custom Post Type Slider ************* //
 
 if ( ! function_exists('slider_header') ) {
@@ -245,6 +258,132 @@ function category_service() {
 
 }
 add_action( 'init', 'category_service', 0 );
+
+}
+
+
+//******** Custom Post Type Capacidades *************//
+if ( ! function_exists('our_capabilities') ) {
+
+// Register Custom Post Type
+function our_capabilities() {
+
+	$labels = array(
+		'name'                  => _x( 'Capacidades', 'Post Type General Name', 'scodev' ),
+		'singular_name'         => _x( 'Capacidad', 'Post Type Singular Name', 'scodev' ),
+		'menu_name'             => __( 'Capacidades', 'scodev' ),
+		'name_admin_bar'        => __( 'Capacidades', 'scodev' ),
+		'archives'              => __( 'Capacidades', 'scodev' ),
+		'attributes'            => __( 'Item Attributes', 'scodev' ),
+		'parent_item_colon'     => __( '', 'scodev' ),
+		'all_items'             => __( 'Todos las capacidades', 'scodev' ),
+		'add_new_item'          => __( 'Nuevo capacidad', 'scodev' ),
+		'add_new'               => __( 'Agregar una capacidad', 'scodev' ),
+		'new_item'              => __( 'Nueva capacidad', 'scodev' ),
+		'edit_item'             => __( 'Editar capacidad', 'scodev' ),
+		'update_item'           => __( 'Update service', 'scodev' ),
+		'view_item'             => __( 'View service', 'scodev' ),
+		'view_items'            => __( 'View services', 'scodev' ),
+		'search_items'          => __( 'Search service', 'scodev' ),
+		'not_found'             => __( 'Not found', 'scodev' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
+		'featured_image'        => __( 'Featured Image', 'scodev' ),
+		'set_featured_image'    => __( 'Set featured image', 'scodev' ),
+		'remove_featured_image' => __( 'Remove featured image', 'scodev' ),
+		'use_featured_image'    => __( 'Use as featured image', 'scodev' ),
+		'insert_into_item'      => __( 'Insert into item', 'scodev' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'scodev' ),
+		'items_list'            => __( 'Items list', 'scodev' ),
+		'items_list_navigation' => __( 'Items list navigation', 'scodev' ),
+		'filter_items_list'     => __( 'Filter items list', 'scodev' ),
+	);
+	$args = array(
+		'label'                 => __( 'Capacidad', 'scodev' ),
+		'description'           => __( 'Nuestras capacidades', 'scodev' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-images-alt2',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'capabilities_our', $args );
+
+}
+add_action( 'init', 'our_capabilities', 0 );
+
+}
+
+
+//******** Custom Post Type Testimoniales *************//
+if ( ! function_exists('our_testimoniales') ) {
+
+// Register Custom Post Type
+function our_testimoniales() {
+
+	$labels = array(
+		'name'                  => _x( 'Testimoniales', 'Post Type General Name', 'scodev' ),
+		'singular_name'         => _x( 'Testimonial', 'Post Type Singular Name', 'scodev' ),
+		'menu_name'             => __( 'Testimoniales', 'scodev' ),
+		'name_admin_bar'        => __( 'Testimoniales', 'scodev' ),
+		'archives'              => __( 'Testimonial', 'scodev' ),
+		'attributes'            => __( 'Item Attributes', 'scodev' ),
+		'parent_item_colon'     => __( '', 'scodev' ),
+		'all_items'             => __( 'Todos los testimonios', 'scodev' ),
+		'add_new_item'          => __( 'Nuevo testimonio', 'scodev' ),
+		'add_new'               => __( 'Agregar un testimonio', 'scodev' ),
+		'new_item'              => __( 'Nueva testimonio', 'scodev' ),
+		'edit_item'             => __( 'Editar testimonio', 'scodev' ),
+		'update_item'           => __( 'Update service', 'scodev' ),
+		'view_item'             => __( 'View testimonio', 'scodev' ),
+		'view_items'            => __( 'View testimonio', 'scodev' ),
+		'search_items'          => __( 'Search testimonio', 'scodev' ),
+		'not_found'             => __( 'Not found', 'scodev' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
+		'featured_image'        => __( 'Featured Image', 'scodev' ),
+		'set_featured_image'    => __( 'Set featured image', 'scodev' ),
+		'remove_featured_image' => __( 'Remove featured image', 'scodev' ),
+		'use_featured_image'    => __( 'Use as featured image', 'scodev' ),
+		'insert_into_item'      => __( 'Insert into item', 'scodev' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'scodev' ),
+		'items_list'            => __( 'Items list', 'scodev' ),
+		'items_list_navigation' => __( 'Items list navigation', 'scodev' ),
+		'filter_items_list'     => __( 'Filter items list', 'scodev' ),
+	);
+	$args = array(
+		'label'                 => __( 'Capacidad', 'scodev' ),
+		'description'           => __( 'Nuestras capacidades', 'scodev' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-images-alt2',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'testimoniales_our', $args );
+
+}
+add_action( 'init', 'our_testimoniales', 0 );
 
 }
 
