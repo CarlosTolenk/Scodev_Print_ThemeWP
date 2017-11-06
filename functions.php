@@ -263,31 +263,31 @@ add_action( 'init', 'category_service', 0 );
 
 
 //******** Custom Post Type Capacidades *************//
-if ( ! function_exists('our_capabilities') ) {
+if ( ! function_exists('our_capacity') ) {
 
 // Register Custom Post Type
-function our_capabilities() {
+function our_capacity() {
 
 	$labels = array(
 		'name'                  => _x( 'Capacidades', 'Post Type General Name', 'scodev' ),
 		'singular_name'         => _x( 'Capacidad', 'Post Type Singular Name', 'scodev' ),
 		'menu_name'             => __( 'Capacidades', 'scodev' ),
 		'name_admin_bar'        => __( 'Capacidades', 'scodev' ),
-		'archives'              => __( 'Capacidades', 'scodev' ),
+		'archives'              => __( 'Capacidad', 'scodev' ),
 		'attributes'            => __( 'Item Attributes', 'scodev' ),
 		'parent_item_colon'     => __( '', 'scodev' ),
-		'all_items'             => __( 'Todos las capacidades', 'scodev' ),
-		'add_new_item'          => __( 'Nuevo capacidad', 'scodev' ),
+		'all_items'             => __( 'Todas las capacidades', 'scodev' ),
+		'add_new_item'          => __( 'Nueva capacidad', 'scodev' ),
 		'add_new'               => __( 'Agregar una capacidad', 'scodev' ),
-		'new_item'              => __( 'Nueva capacidad', 'scodev' ),
+		'new_item'              => __( 'Nuevo capacidad', 'scodev' ),
 		'edit_item'             => __( 'Editar capacidad', 'scodev' ),
-		'update_item'           => __( 'Update service', 'scodev' ),
-		'view_item'             => __( 'View service', 'scodev' ),
-		'view_items'            => __( 'View services', 'scodev' ),
-		'search_items'          => __( 'Search service', 'scodev' ),
+		'update_item'           => __( 'Actualizar capacidad', 'scodev' ),
+		'view_item'             => __( 'Ver capacidad', 'scodev' ),
+		'view_items'            => __( 'Ver capacidades', 'scodev' ),
+		'search_items'          => __( 'Buscar capacidad', 'scodev' ),
 		'not_found'             => __( 'Not found', 'scodev' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
-		'featured_image'        => __( 'Featured Image', 'scodev' ),
+		'featured_image'        => __( 'Imagen destacada', 'scodev' ),
 		'set_featured_image'    => __( 'Set featured image', 'scodev' ),
 		'remove_featured_image' => __( 'Remove featured image', 'scodev' ),
 		'use_featured_image'    => __( 'Use as featured image', 'scodev' ),
@@ -308,7 +308,7 @@ function our_capabilities() {
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-images-alt2',
+		'menu_icon'             => 'dashicons-performance',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -317,10 +317,10 @@ function our_capabilities() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'capabilities_our', $args );
+	register_post_type( 'capacity_our', $args );
 
 }
-add_action( 'init', 'our_capabilities', 0 );
+add_action( 'init', 'our_capacity', 0 );
 
 }
 
@@ -344,10 +344,10 @@ function our_testimoniales() {
 		'add_new'               => __( 'Agregar un testimonio', 'scodev' ),
 		'new_item'              => __( 'Nueva testimonio', 'scodev' ),
 		'edit_item'             => __( 'Editar testimonio', 'scodev' ),
-		'update_item'           => __( 'Update service', 'scodev' ),
-		'view_item'             => __( 'View testimonio', 'scodev' ),
-		'view_items'            => __( 'View testimonio', 'scodev' ),
-		'search_items'          => __( 'Search testimonio', 'scodev' ),
+		'update_item'           => __( 'Actualizar testimonio', 'scodev' ),
+		'view_item'             => __( 'Ver testimonio', 'scodev' ),
+		'view_items'            => __( 'Ver testimonio', 'scodev' ),
+		'search_items'          => __( 'Buscar testimonio', 'scodev' ),
 		'not_found'             => __( 'Not found', 'scodev' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
 		'featured_image'        => __( 'Featured Image', 'scodev' ),
@@ -371,7 +371,7 @@ function our_testimoniales() {
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-images-alt2',
+		'menu_icon'             => 'dashicons-groups',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,

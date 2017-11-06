@@ -228,40 +228,47 @@
             <i class="fa fa-star"></i>
           </span>
         </div>
+
+
+        <?php $args = array(
+          'post_type' => 'capacity_our',
+          'orderby' => 'date',
+          'order' => 'DESC',
+          'posts_per_page' => -1
+        ); ?>
         <div class="block-capabititie-w">
-          <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
-            <div class="block-mydoughnut" id="myDoughnut"> </div>
-            <span id="dona-cantidad" style="display: none">95</span>
-            <h2 class="title">huge quantity</h2>
-            <div class="decs">
-            <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
-            </div>
-          </div>
-          <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
-            <div class="block-mydoughnut" id="myDoughnut2"> </div>
-            <span id="dona2-cantidad" style="display: none">75</span>
-            <h2 class="title">on Time</h2>
-            <div class="decs">
-            <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
-            </div>
-          </div>
-          <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
-            <div class="block-mydoughnut" id="myDoughnut3"> </div>
-            <span id="dona3-cantidad" style="display: none">90</span>
-            <h2 class="title">True Color</h2>
-            <div class="decs">
-            <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
-            </div>
-          </div>
-          <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
-            <div class="block-mydoughnut" id="myDoughnut4"> </div>
-            <span id="dona4-cantidad" style="display: none">72</span>
-            <h2 class="title">fast Delivery</h2>
-            <div class="decs">
-            <p>Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</p>
-            </div>
-          </div>
-        </div>
+             <?php $capacity = new WP_Query($args); ?>
+
+             <?php $i = 1; ?>
+
+               <?php while($capacity->have_posts()): $capacity->the_post(); ?>
+                  <?php $selector = "myDoughnut";  ?>
+                  <?php $sel = "dona-cantidad"  ?>
+                     <div class="block-capabititie col-md-3 col-sm-3 col-xs-12">
+
+                       <?php if ($i!=1) { ?>
+                         <div class="block-mydoughnut" id="<?php echo $selector . $i ?>"> </div>
+                       <?php } else { ?>
+                           <div class="block-mydoughnut" id="myDoughnut"></div>
+                         <?php } ?>
+                       <span id="<?php echo $sel . $i ?>" style="display: none"><?php the_field( 'porcentaje_' ); ?></span>
+                       <h2 class="title"> <?php the_title(); ?></h2>
+                       <div class="decs">
+                         <p> <?php the_content(); ?></p>
+                       </div>
+
+                       <?php $i++; ?>
+                     </div>
+
+               <?php endwhile; wp_reset_postdata(); ?>
+
+
+       </div>
+
+
+
+
+
       </div>
     </div>
   </section>

@@ -99,7 +99,7 @@
 
 
 		if(checkWidths < 768){
-      var texto = $('#dona-cantidad').text();
+      var texto = $('#dona-cantidad1').text();
       var cantidad =  parseInt(texto);
 			var doughnutData = [
 				{value:cantidad,color:"#e92890"},
@@ -122,7 +122,7 @@
 				dnCounterClockwise: false,
 			});// End Doughnut
 
-      var texto = $('#dona2-cantidad').text();
+      var texto = $('#dona-cantidad2').text();
       var cantidad =  parseInt(texto);
 			var doughnutData = [
 				{value:cantidad,color:"#fbc443"},
@@ -145,7 +145,7 @@
 				dnCounterClockwise: false,
 			});// End Doughnut
 
-      var texto = $('#dona3-cantidad').text();
+      var texto = $('#dona-cantidad3').text();
       var cantidad =  parseInt(texto);
 			var doughnutData = [
 				{value:cantidad,color:"#25bce9"},
@@ -168,7 +168,7 @@
 				dnCounterClockwise: false,
 			});
 
-      var texto = $('#dona4-cantidad').text();
+      var texto = $('#dona-cantidad4').text();
       var cantidad =  parseInt(texto);
 			var doughnutData = [
 				{value:cantidad,color:"#94eae3"},
@@ -198,9 +198,12 @@
 			var b = inViews();
 			if(b == true && checkRun == true){
 				checkRun = false;
+        var texto = $('#dona-cantidad1').text();
+        var cantidad =  parseInt(texto);
+        alert(cantidad);
 				var doughnutData = [
-					{value:90,color:"#fd5b4e"},
-					{value:100-90,color:"rgba(0,0,0,0)"}
+					{value:cantidad,color:"#fd5b4e"},
+					{value:100-cantidad,color:"rgba(0,0,0,0)"}
 				];
 				$("#myDoughnut" ).doughnutit({
 					dnData: doughnutData,
@@ -213,7 +216,7 @@
 					dnShowText: true,
 					dnFontSize: '24px',
 					dnFontColor: "#fd5b4e",
-					dnText: '90%',
+					dnText: cantidad + '%',
 					dnFontOffset:20,
 					dnStartAngle: 90,
 					dnCounterClockwise: false,
