@@ -1224,7 +1224,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -1236,54 +1235,33 @@
         <div class="tes-block" id="testimonial">
           <div class="slider-inner">
             <div class="wrap-item">
-              <div class="item">
-                <div class="inner">
-                  <div class="image">
-                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/testimonials/1.png" alt="terminal-01"/></a>
-                  </div>
-                  <div class="tes-name">
-                    <a href="#">Sam Ibister</a>
-                  </div>
-                  <div class="tes-job">
-                    <span>Web Designe</span>
-                  </div>
-                  <div class="tes-decs">
-                    <p>This PSD is so well organised - the best Ive ever downloaded from here. The ideas are also really fresh and new - great work. I cant wait to start work with it!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="inner">
-                  <div class="image">
-                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/testimonials/2.png" alt="terminal-01"/></a>
-                  </div>
-                  <div class="tes-name">
-                    <a href="#">Sam Ibister</a>
-                  </div>
-                  <div class="tes-job">
-                    <span>Web Designe</span>
-                  </div>
-                  <div class="tes-decs">
-                    <p>This PSD is so well organised - the best Ive ever downloaded from here. The ideas are also really fresh and new - great work. I cant wait to start work with it!</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="inner">
-                  <div class="image">
-                    <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/testimonials/3.png" alt="terminal-01"/></a>
-                  </div>
-                  <div class="tes-name">
-                    <a href="#">Sam Ibister</a>
-                  </div>
-                  <div class="tes-job">
-                    <span>Web Designe</span>
-                  </div>
-                  <div class="tes-decs">
-                    <p>This PSD is so well organised - the best Ive ever downloaded from here. The ideas are also really fresh and new - great work. I cant wait to start work with it!</p>
-                  </div>
-                </div>
-              </div>
+
+                  <?php $args = array(
+                    'post_type' => 'testimoniales_our',
+                    'orderby' => 'date',
+                    'order' => 'ASC',
+                    'posts_per_page' => -1
+                      ); ?>
+
+              <?php $testimonio = new WP_Query($args); ?>
+              <?php while($testimonio->have_posts()): $testimonio->the_post(); ?>
+                    <div class="item">
+                      <div class="inner">
+                        <div class="image">
+                          <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/testimonials/1.png" alt="terminal-01"/></a>
+                        </div>
+                        <div class="tes-name">
+                          <a href="#"><?php echo the_title(); ?></a>
+                        </div>
+                        <div class="tes-job">
+                          <span><?php the_field( 'prof_' ); ?></span>
+                        </div>
+                        <div class="tes-decs">
+                          <p><?php echo the_comment(); ?></p>
+                        </div>
+                      </div>
+                   </div>
+              <?php endwhile; wp_reset_postdata(); ?>
             </div>
           </div>
         </div>
@@ -1292,7 +1270,7 @@
     <div class="container">
       <div class="row">
         <div class="bran-block">
-          <div class="item col-md-2 col-sm-4 col-xs-6">
+          <div class="item col-md-offset-2 col-md-2 col-sm-4 col-xs-6">
             <a href="#" class="image">
               <img src="<?php echo get_template_directory_uri(); ?>/images/brands/1.png" alt="brand-01"/>
             </a>
@@ -1310,16 +1288,6 @@
           <div class="item col-md-2 col-sm-4 col-xs-6">
             <a href="#" class="image">
               <img src="<?php echo get_template_directory_uri(); ?>/images/brands/4.png" alt="brand-04"/>
-            </a>
-          </div>
-          <div class="item col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/5.png" alt="brand-05"/>
-            </a>
-          </div>
-          <div class="item col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/6.png" alt="brand-06"/>
             </a>
           </div>
         </div>

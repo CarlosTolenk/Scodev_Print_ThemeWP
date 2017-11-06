@@ -199,8 +199,7 @@
 			if(b == true && checkRun == true){
 				checkRun = false;
         var texto = $('#dona-cantidad1').text();
-        var cantidad =  parseInt(texto);
-        alert(cantidad);
+        var cantidad =  parseInt(texto);      
 				var doughnutData = [
 					{value:cantidad,color:"#fd5b4e"},
 					{value:100-cantidad,color:"rgba(0,0,0,0)"}
