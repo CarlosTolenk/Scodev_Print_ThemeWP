@@ -1232,6 +1232,14 @@
   <section class="home-testimonial">
     <div class="container">
       <div class="row">
+          <div class="block-title-w">
+            <h2 class="block-title">our testimonial</h2>
+            <span class="icon-title">
+              <span></span>
+              <i class="fa fa-star"></i>
+            </span>
+            <span class="sub-title">Satisfied customers make the difference in everything</span>
+          </div>
         <div class="tes-block" id="testimonial">
           <div class="slider-inner">
             <div class="wrap-item">
@@ -1260,39 +1268,49 @@
                           <p><?php echo the_comment(); ?></p>
                         </div>
                       </div>
-                   </div>
+
+                        <div class="row">
+                          <div class="bran-block">
+                            <div class="item col-md-offset-2 col-md-2 col-sm-4 col-xs-6">
+                              <a href="#" class="image">
+                                <?php if ( get_field( 'proyecto_1') ) { ?>
+                                  <img src="<?php the_field( 'proyecto_1' ); ?>" />
+                                <?php } ?>
+                              </a>
+                            </div>
+                            <div class="item col-md-2 col-sm-4 col-xs-6">
+                              <a href="#" class="image">
+                                <?php if ( get_field( 'proyecto_2') ) { ?>
+                                  <img src="<?php the_field( 'proyecto_2' ); ?>" />
+                                <?php } ?>
+                              </a>
+                            </div>
+                            <div class="item col-md-2 col-sm-4 col-xs-6">
+                              <a href="#" class="image">
+                                <?php if ( get_field( 'proyecto_3') ) { ?>
+                                  <img src="<?php the_field( 'proyecto_3' ); ?>" />
+                                <?php } ?>
+                              </a>
+                            </div>
+                            <div class="item col-md-2 col-sm-4 col-xs-6">
+                              <a href="#" class="image">
+                                <?php $proyecto_4 = get_field( 'proyecto_4' ); ?>
+                                  <?php if ( $proyecto_4 ) { ?>
+                                  	<img src="<?php echo $proyecto_4['url']; ?>" alt="<?php echo $proyecto_4['alt']; ?>" />
+                                  <?php } ?>
+
+                              </a>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+
               <?php endwhile; wp_reset_postdata(); ?>
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="bran-block">
-          <div class="item col-md-offset-2 col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/1.png" alt="brand-01"/>
-            </a>
-          </div>
-          <div class="item col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/2.png" alt="brand-02"/>
-            </a>
-          </div>
-          <div class="item col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/3.png" alt="brand-03"/>
-            </a>
-          </div>
-          <div class="item col-md-2 col-sm-4 col-xs-6">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/brands/4.png" alt="brand-04"/>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
 
