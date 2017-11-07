@@ -198,6 +198,73 @@ add_action( 'init', 'slider_header', 0 );
 
 }
 
+//******** Custom Post Type Testimoniales *************//
+if ( ! function_exists('our_category') ) {
+
+// Register Custom Post Type
+function our_category() {
+
+	$labels = array(
+		'name'                  => _x( 'Categorias', 'Post Type General Name', 'scodev' ),
+		'singular_name'         => _x( 'Categoria', 'Post Type Singular Name', 'scodev' ),
+		'menu_name'             => __( 'Categoria', 'scodev' ),
+		'name_admin_bar'        => __( 'Categoria', 'scodev' ),
+		'archives'              => __( 'Categoria', 'scodev' ),
+		'attributes'            => __( 'Item Attributes', 'scodev' ),
+		'parent_item_colon'     => __( '', 'scodev' ),
+		'all_items'             => __( 'Todas las categorias', 'scodev' ),
+		'add_new_item'          => __( 'Nueva categoria', 'scodev' ),
+		'add_new'               => __( 'Agregar una categoria', 'scodev' ),
+		'new_item'              => __( 'Nueva categoria', 'scodev' ),
+		'edit_item'             => __( 'Editar categoria', 'scodev' ),
+		'update_item'           => __( 'Actualizar categoria', 'scodev' ),
+		'view_item'             => __( 'Ver categoria', 'scodev' ),
+		'view_items'            => __( 'Ver categorias', 'scodev' ),
+		'search_items'          => __( 'Buscar categoria', 'scodev' ),
+		'not_found'             => __( 'Not found', 'scodev' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'scodev' ),
+		'featured_image'        => __( 'Featured Image', 'scodev' ),
+		'set_featured_image'    => __( 'Set featured image', 'scodev' ),
+		'remove_featured_image' => __( 'Remove featured image', 'scodev' ),
+		'use_featured_image'    => __( 'Use as featured image', 'scodev' ),
+		'insert_into_item'      => __( 'Insert into item', 'scodev' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'scodev' ),
+		'items_list'            => __( 'Items list', 'scodev' ),
+		'items_list_navigation' => __( 'Items list navigation', 'scodev' ),
+		'filter_items_list'     => __( 'Filter items list', 'scodev' ),
+	);
+	$args = array(
+		'label'                 => __( 'Categorias', 'scodev' ),
+		'description'           => __( 'Nuestras categorias', 'scodev' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor', 'thumbnail', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-format-status',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'our_category', $args );
+
+}
+add_action( 'init', 'our_category', 0 );
+
+}
+
+
+
+
+
+
 
 //******** Custom Post Type de Servicios *************//
 if ( ! function_exists('category_service') ) {

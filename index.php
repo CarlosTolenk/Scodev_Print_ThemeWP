@@ -42,60 +42,28 @@
   <section class="home-category">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
-          <a href="#" class="image">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/1.jpg" alt="banner-category"/>
-          </a>
-          <div class="info">
-            <a href="#">CANVAS PRINT</a>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 block block-center">
-          <div class="inner-top">
-            <div class="box-left">
-              <a href="#" class="image frist">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/2.jpg" alt="banner-category"/>
-              </a>
-              <div class="info">
-                <a href="#">BROCHURE</a>
-              </div>
-            </div>
-            <div class="box-right">
-              <a href="#" class="image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/3.jpg" alt="banner-category"/>
-              </a>
-              <div class="info">
-                <a href="#">BUSINESS CARD</a>
-              </div>
-            </div>
-          </div>
-          <div class="inner-bottom">
+
+        <?php $args = array(
+          'post_type' => 'our_category',
+          'orderby' => 'date',
+          'order' => 'ASC',
+          'posts_per_page' => -1
+        ); ?>
+
+        <?php $category = new WP_Query($args); ?>
+        <?php $selector = 1; ?>
+        <?php while($category->have_posts()): $category->the_post(); ?>
+
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
             <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/4.jpg" alt="banner-category"/>
+              <?php  the_post_thumbnail(); ?>
             </a>
             <div class="info">
-              <a href="#">LOGO PRINT</a>
+              <a href="#"><?php  the_title(); ?></a>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-right">
-          <div class="inner-top">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/5.jpg" alt="banner-category"/>
-            </a>
-            <div class="info">
-              <a href="#">ENVELOPE</a>
-            </div>
-          </div>
-          <div class="inner-bottom">
-            <a href="#" class="image">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/banner/category/6.jpg" alt="banner-category"/>
-            </a>
-            <div class="info">
-              <a href="#">COVER  PRINT</a>
-            </div>
-          </div>
-        </div>
+          </div>     
+
+        <?php endwhile; wp_reset_postdata(); ?>
       </div>
     </div>
   </section>  <!-- End Categoty-->
@@ -1298,7 +1266,6 @@
                                   <?php if ( $proyecto_4 ) { ?>
                                   	<img src="<?php echo $proyecto_4['url']; ?>" alt="<?php echo $proyecto_4['alt']; ?>" />
                                   <?php } ?>
-
                               </a>
                             </div>
                             </div>
