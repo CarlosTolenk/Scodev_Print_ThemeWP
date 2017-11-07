@@ -5847,17 +5847,17 @@ img{
 	margin-right:28px;
 }
 .home-category .block-center .inner-bottom{
-	margin-top: 14px;
+	margin-top: 10px;
 	float:left;
 }
 .home-category .block-right .inner-bottom{
-	margin-top: 14px;
+	margin-top: 10px;
 }
 .home-category .info{
 	position:absolute;
 	top:50%;
 	left:50%;
-	margin-top:-13px;
+	margin-top:-9px;
 }
 .home-category .info a{
 	color:#fff;

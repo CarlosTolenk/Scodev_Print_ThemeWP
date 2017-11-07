@@ -54,14 +54,76 @@
         <?php $selector = 1; ?>
         <?php while($category->have_posts()): $category->the_post(); ?>
 
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
-            <a href="#" class="image">
-              <?php  the_post_thumbnail(); ?>
-            </a>
-            <div class="info">
-              <a href="#"><?php  the_title(); ?></a>
+          <?php if ($selector == 1) : ?>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-left">
+              <a href="#" class="image">
+                <?php the_post_thumbnail(); ?>
+              </a>
+              <div class="info">
+                <a href="#"><?php the_title(); ?></a>
+              </div>
             </div>
-          </div>     
+          <?php endif; ?>
+          <?php if($selector > 1 && $selector < 5): ?>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-right">
+                <div class="inner-bottom ajuste">
+                  <a href="#" class="image">
+                    <?php the_post_thumbnail(); ?>
+                  </a>
+                  <div class="info">
+                    <a href="#"><?php the_title(); ?></a>
+                  </div>
+                </div>
+              </div>
+          <?php endif; ?>
+        <?php if($selector == 5): ?>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 block block-center">
+                <div class="inner-bottom ajuste-b">
+                  <a href="#" class="image">
+                    <?php the_post_thumbnail(); ?>
+                  </a>
+                  <div class="info">
+                    <a href="#"><?php the_title(); ?></a>
+                  </div>
+                </div>
+              </div>
+        <?php endif; ?>
+        <?php if($selector >= 6 ): ?>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 block block-right">
+                <div class="inner-bottom ajuste-b">
+                  <a href="#" class="image">
+                    <?php the_post_thumbnail(); ?>
+                  </a>
+                  <div class="info">
+                    <a href="#"><?php the_title(); ?></a>
+                  </div>
+                </div>
+              </div>
+        <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <?php  $selector++; ?>
 
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
