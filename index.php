@@ -42,6 +42,15 @@
   <section class="home-category">
     <div class="container">
       <div class="row">
+        <div class="block-title-w">
+          <h2 class="block-title">our products</h2>
+          <span class="sub-title">Mauris sollicitudin dui quisOrci euismod mattis Integer auctor Aenean id turpis eu est iaculis suscipit.</span>
+          <span class="icon-title">
+            <span></span>
+            <i class="fa fa-star"></i>
+          </span>
+        </div>
+
 
         <?php $args = array(
           'post_type' => 'our_category',
@@ -100,31 +109,7 @@
                 </div>
               </div>
         <?php endif; ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <?php  $selector++; ?>
-
+        <?php  $selector++; ?>
         <?php endwhile; wp_reset_postdata(); ?>
       </div>
     </div>
@@ -362,901 +347,62 @@
             <span></span>
             <i class="fa fa-star"></i>
           </span>
-          <ul>
-            <li class="active"><a data-toggle="tab" href="#tab11">All projects</a></li>
-            <li><a data-toggle="tab" href="#tab21">Leaflets & Flyers</a></li>
-            <li><a data-toggle="tab" href="#tab31" class="last">Logo</a></li>
-            <li><a data-toggle="tab" href="#tab41" class="last">Stationary</a></li>
-            <li><a data-toggle="tab" href="#tab51" class="last">3d product</a></li>
-            <li><a data-toggle="tab" href="#tab61" class="last">Presentation</a></li>
-            <li><a data-toggle="tab" href="#tab71" class="last">Brochure</a></li>
-            <li><a data-toggle="tab" href="#tab81" class="last">Ecommerce</a></li>
-          </ul>
-        </div>
-        <div class="tab-content">
-          <div class="tab-pane active" id="tab11">
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
+        <ul id="selection-category">
+          <li class="active"><a data-toggle="tab" href="#tab11">All projects</a></li>
+          <li><a data-toggle="tab" href="#tab21">Leaflets & Flyers</a></li>
+          <li><a data-toggle="tab" href="#tab31" class="last">Logo</a></li>
+          <li><a data-toggle="tab" href="#tab41" class="last">Stationary</a></li>
+          <li><a data-toggle="tab" href="#tab51" class="last">3d product</a></li>
+          <li><a data-toggle="tab" href="#tab61" class="last">Presentation</a></li>
+          <li><a data-toggle="tab" href="#tab71" class="last">Brochure</a></li>
+          <li><a data-toggle="tab" href="#tab81" class="last">Ecommerce</a></li>
+        </ul>
+      </div>
+
+      <div class="tab-content">
+
+        <?php echo do_shortcode(''); ?>
+
+
+
+
+
+        <div class="tab-pane active" id="tab31">
+          <?php
+           $args = array('cat' => 6);
+           $category_posts = new WP_Query($args);
+
+           if($category_posts->have_posts()) :
+              while($category_posts->have_posts()) :
+                 $category_posts->the_post();
+        ?>
+
+          <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
+            <div class="w-block-recent">
+
+
+
+              <div class="image-recent">
+                <a href="#">
+                  <?php the_post_thumbnail(); ?>
+                </a>
               </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                  </a>
+              <div class="info-recent">
+                <h2 class="title"><?php the_title() ?></h2>
+                <div class="text-recent">
+                  <p>
+                    <?php the_content() ?>
+                  </p>
                 </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
+                <!--<a href="#" class="read-more">read more</a>-->
               </div>
             </div>
           </div>
-          <div class="tab-pane" id="tab21">
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="tab-pane" id="tab31">
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="tab-pane" id="tab41">
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-                <div class="w-block-recent">
-                  <div class="image-recent">
-                    <a href="#">
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                    </a>
-                  </div>
-                  <div class="info-recent">
-                    <h2 class="title">eSliproser Postcards</h2>
-                    <div class="text-recent">
-                      <p>
-                        Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                      </p>
-                    </div>
-                    <a href="#" class="read-more">read more</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="tab-pane" id="tab51">
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab61">
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab71">
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="tab81">
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/5.png" alt="service-05"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/6.png" alt="service-06"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/7.png" alt="service-07"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/8.png" alt="service-08"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/9.png" alt="service-09"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
-              <div class="w-block-recent">
-                <div class="image-recent">
-                  <a href="#">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/our_service/10.png" alt="service-10"/>
-                  </a>
-                </div>
-                <div class="info-recent">
-                  <h2 class="title">eSliproser Postcards</h2>
-                  <div class="text-recent">
-                    <p>
-                      Celebrate 2016 in style with our beloved Mini Photo Wall Calendar. Printed on eggshell paper, make your own calendar in minutes with 12 special photos.
-                    </p>
-                  </div>
-                  <a href="#" class="read-more">read more</a>
-                </div>
-              </div>
-            </div>
-          </div>
+            <?php endwhile; endif;  ?>
         </div>
       </div>
     </div>
+  </div>
   </section>
   <!--Home Testimonials : Begin -->
   <section class="home-testimonial">
@@ -1286,7 +432,7 @@
                     <div class="item">
                       <div class="inner">
                         <div class="image">
-                          <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/testimonials/1.png" alt="terminal-01"/></a>
+                          <?php the_post_thumbnail(); ?>
                         </div>
                         <div class="tes-name">
                           <a href="#"><?php echo the_title(); ?></a>
@@ -1299,31 +445,31 @@
                         </div>
                       </div>
 
-                        <div class="row">
+                        <div class="row test-img">
                           <div class="bran-block">
                             <div class="item col-md-offset-2 col-md-2 col-sm-4 col-xs-6">
-                              <a href="#" class="image">
+                              <a href="#" >
                                 <?php if ( get_field( 'proyecto_1') ) { ?>
                                   <img src="<?php the_field( 'proyecto_1' ); ?>" />
                                 <?php } ?>
                               </a>
                             </div>
                             <div class="item col-md-2 col-sm-4 col-xs-6">
-                              <a href="#" class="image">
+                              <a href="#" >
                                 <?php if ( get_field( 'proyecto_2') ) { ?>
                                   <img src="<?php the_field( 'proyecto_2' ); ?>" />
                                 <?php } ?>
                               </a>
                             </div>
                             <div class="item col-md-2 col-sm-4 col-xs-6">
-                              <a href="#" class="image">
+                              <a href="#" >
                                 <?php if ( get_field( 'proyecto_3') ) { ?>
                                   <img src="<?php the_field( 'proyecto_3' ); ?>" />
                                 <?php } ?>
                               </a>
                             </div>
                             <div class="item col-md-2 col-sm-4 col-xs-6">
-                              <a href="#" class="image">
+                              <a href="#" >
                                 <?php $proyecto_4 = get_field( 'proyecto_4' ); ?>
                                   <?php if ( $proyecto_4 ) { ?>
                                   	<img src="<?php echo $proyecto_4['url']; ?>" alt="<?php echo $proyecto_4['alt']; ?>" />
