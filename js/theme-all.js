@@ -1,7 +1,7 @@
 (function($){
     "use strict"; // Start of use strict
 	jQuery(document).ready(function($){
-		$(".search-safari").hide();
+		/*$(".search-safari").hide();
 		$(".search-w").on("click", function(){
 			$('.search-safari').slideToggle();
 		})
@@ -13,7 +13,7 @@
 		});
 		$("body").on("click", function(e){
 			$('.search-safari').hide();
-		});
+		});*/
 		//Back to top button click
 		jQuery("#back-to-top").on("click", function(){
 			jQuery("html, body").animate({ scrollTop: 0 }, 600);

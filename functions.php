@@ -82,8 +82,8 @@ function scodev_scripts(){
   wp_enqueue_script('jquery.animateSlider');
   wp_enqueue_script('jquery.jscrollpane');
   wp_enqueue_script('jquery.mousewheel');
-  wp_enqueue_script('detail');
-  wp_enqueue_script('faq-theme');
+  //wp_enqueue_script('detail');
+//  wp_enqueue_script('faq-theme');
   wp_enqueue_script('jquery.subscribe-better');
   wp_enqueue_script('modernizr.custom');
   wp_enqueue_script('modernizr');

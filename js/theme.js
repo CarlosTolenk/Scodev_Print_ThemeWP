@@ -187,7 +187,7 @@
 	  if(checkWidth < 768) {
 		jQuery(".footer-col h2").on("click", function(){
 		  //slide up all the link lists
-		  jQuery(".footer-col .footer-content").slideUp(200);
+		  jQuery(".footer-col .footer-content").slideUp('slow');
 		  //slide down the link list below the h3 clicked - only if its closed
 		  if(!jQuery(this).next().is(":visible"))
 		  {

@@ -12,7 +12,7 @@
 				startwidth:1170,
 				autoplay:true
 			});
-		$(".search-safari").hide();
+		/*$(".search-safari").hide();
 		$(".search-w").on("click", function(){
 			$('.search-safari').slideToggle();
 		})
@@ -24,7 +24,7 @@
 		});
 		$("body").on("click", function(e){
 			$('.search-safari').hide();
-		});
+		});*/
 		/* if (checkWidths > 768){ */
 			var menu_offset_top = $('.main-header').outerHeight();
 			function processScroll() {
