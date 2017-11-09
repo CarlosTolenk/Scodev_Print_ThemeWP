@@ -74,7 +74,7 @@ function scodev_scripts(){
   wp_enqueue_script('bootstrap');
   wp_enqueue_script('theme');
     wp_enqueue_script('our_work');
-  wp_enqueue_script('theme-all');
+  //wp_enqueue_script('theme-all');
   wp_enqueue_script('theme-home');
   wp_enqueue_script('owl.carousel');
   wp_enqueue_script('Chart');

@@ -138,7 +138,7 @@
   	//function show and hide mobile menu
   	var isMenuShowing = false;
   	function menuShow(){
-  	  //jQuery('#sitebody').addClass('mobilemenu').animate({ 'right': '-84.375%' }, 250);
+  	  jQuery('#sitebody').addClass('mobilemenu').animate({ 'right': '-84.375%' }, 250);
   	  jQuery('#mb-main-menu').animate({ 'left': '50' }, 250);
   	  jQuery('#mb-main-menu').css('display','block');
   	  jQuery('#sitebodyoverlay').show();
@@ -154,7 +154,6 @@
 
 		//Show hide menu call function
 		jQuery(".mbmenu-icon").on("click", function(){
-      alert("Click al menu");
 			if(isMenuShowing){
 			  menuHide();
 			}else{
@@ -188,7 +187,7 @@
 	  if(checkWidth < 768) {
 		jQuery(".footer-col h2").on("click", function(){
 		  //slide up all the link lists
-		  jQuery(".footer-col .footer-content").slideUp(100);
+		  jQuery(".footer-col .footer-content").slideUp("slow");
 		  //slide down the link list below the h3 clicked - only if its closed
 		 if(!jQuery(this).next().is(":visible"))
 		  {
@@ -199,7 +198,7 @@
 	}
 	//call footer accordian slide  on mobile
 	jQuery(window).ready(mobileFooterSlide);
-	/* jQuery(window).resize(mobileFooterSlide); */
+	jQuery(window).resize(mobileFooterSlide);
 	function menuHide(){
 	  jQuery('#mb-main-menu').animate({ 'left': '-100%' }, 250);
 	  jQuery('#sitebodyoverlay').hide();

@@ -701,12 +701,12 @@ a.product-name:hover{
 	background:#fff;
 	z-index:999;
 	width:100%;
-	top:0;
+	top:0!important;
 	box-shadow:2px 3px 4px rgba(0, 0, 0, 0.3);
 }
 @media (min-width: 768px){
 	.main-header.menu-fixed{
-		margin-top: 30px;
+		top:-100px;
 	}
 }
 

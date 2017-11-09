@@ -71,7 +71,7 @@
 	  jQuery(window).scrollTop(0);
 	  isMenuShowing = true;
 	}
-	//Footer slide on mobile
+	/*Footer slide on mobile
 	function mobileFooterSlide() {
 	  var checkWidth = jQuery(window).width();
 
@@ -87,7 +87,7 @@
 		});
 	  }
 	}
-	//call footer accordian slide  on mobile
+	//call footer accordian slide  on mobile */
 	jQuery(window).ready(mobileFooterSlide);
 	function menuHide(){
 	  jQuery('#mb-main-menu').animate({ 'left': '-100%' }, 250);

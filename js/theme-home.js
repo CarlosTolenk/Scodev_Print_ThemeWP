@@ -199,7 +199,7 @@
 			if(b == true && checkRun == true){
 				checkRun = false;
         var texto = $('#dona-cantidad1').text();
-        var cantidad =  parseInt(texto);      
+        var cantidad =  parseInt(texto);
 				var doughnutData = [
 					{value:cantidad,color:"#fd5b4e"},
 					{value:100-cantidad,color:"rgba(0,0,0,0)"}
@@ -450,22 +450,21 @@
 	  jQuery(window).scrollTop(0);
 	  isMenuShowing = true;
 	}
-	//Footer slide on mobile
-	function mobileFooterSlide() {
-	  var checkWidth = jQuery(window).width();
-
-	  if(checkWidth < 768) {
-		jQuery(".footer-col h2").on("click", function(){
-		  //slide up all the link lists
-		  jQuery(".footer-col .footer-content").slideUp(200);
-		  //slide down the link list below the h3 clicked - only if its closed
-		  if(!jQuery(this).next().is(":visible"))
-		  {
-			jQuery(this).next().slideDown();
-		  }
-		});
-	  }
-	}
+  //Footer slide on mobile
+  function mobileFooterSlide() {
+    var checkWidth = jQuery(window).width();
+    if(checkWidth < 768) {
+    jQuery(".footer-col h2").on("click", function(){
+      //slide up all the link lists
+      jQuery(".footer-col .footer-content").slideUp("slow");
+      //slide down the link list below the h3 clicked - only if its closed
+     if(!jQuery(this).next().is(":visible"))
+      {
+           jQuery(this).next().slideDown();
+      }
+    });
+    }
+  }
 	//call footer accordian slide  on mobile
 	jQuery(window).ready(mobileFooterSlide);
 	/* jQuery(window).resize(mobileFooterSlide); */
