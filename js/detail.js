@@ -13,51 +13,51 @@
 			itemsMobile : [479,1],
 			singleItem : false,
 			itemsScaleUp : false,
-		 
+
 			//Basic Speeds
 			slideSpeed : 200,
 			paginationSpeed : 800,
 			rewindSpeed : 1000,
-		 
+
 			//Autoplay
 			autoPlay : false,
 			stopOnHover : false,
-		 
+
 			// Navigation
 			navigation : true,
 			navigationText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 			rewindNav : true,
 			scrollPerPage : false,
-		 
+
 			//Pagination
 			pagination : false,
 			paginationNumbers: false,
-		 
-			// Responsive 
+
+			// Responsive
 			responsive: true,
 			responsiveRefreshRate : 200,
 			responsiveBaseWidth: window,
-		 
+
 			//Lazy load
 			lazyLoad : false,
 			lazyFollow : true,
 			lazyEffect : "fade",
-		 
+
 			//Auto height
 			autoHeight : false,
-		 
-			//JSON 
-			jsonPath : false, 
+
+			//JSON
+			jsonPath : false,
 			jsonSuccess : false,
-		 
+
 			//Mouse Events
 			dragBeforeAnimFinish : true,
 			mouseDrag : true,
 			touchDrag : true,
-		 
+
 			//Transitions
 			transitionStyle : false,
-		 
+
 			// Other
 			addClassActive : false,
 		});
@@ -76,18 +76,18 @@
 		$(".search-w").on("click", function(e){
 			e.stopPropagation();
 		});
-		$(".search-safari").on("click", function(e){ 
+		$(".search-safari").on("click", function(e){
 			e.stopPropagation();
 		});
-		$("body").on("click", function(e){ 
-			$('.search-safari').hide(); 
+		$("body").on("click", function(e){
+			$('.search-safari').hide();
 		});
 		  //Mobile menu show submenu
 		var heightWeb = jQuery(this).height();
 		jQuery('#mb-main-menu').css('height',heightWeb);
 		jQuery('#sitebodyoverlay').css('height',heightWeb);
 
-		jQuery("#mb-main-menu li.parent a").on("click", function(){  
+		jQuery("#mb-main-menu li.parent a").on("click", function(){
 		jQuery("#mb-main-menu li.parent a").removeClass('active');
 		//slide up all the link lists
 		jQuery("#mb-main-menu li.parent ul").slideUp();
@@ -98,8 +98,8 @@
 			  jQuery(this).addClass('active');
 			}
 		});
-		  
-		 jQuery("#cate_list li.parent a").on("click", function(){  
+
+		 jQuery("#cate_list li.parent a").on("click", function(){
 			jQuery("#cate_list li.parent a").removeClass('active');
 			//slide up all the link lists
 			jQuery("#cate_list li.parent ul").slideUp();
@@ -110,33 +110,33 @@
 			  jQuery(this).addClass('active');
 			}
 		});
-		  
+
 		//Show hide menu call function
-		 jQuery(".mbmenu-icon").on("click", function(){  
+		 jQuery(".mbmenu-icon").on("click", function(){
 			if(isMenuShowing){
 			  menuHide();
 			}else{
 			  menuShow();
 			}
 		});
-		jQuery("#sitebodyoverlay").on("click", function(){  
+		jQuery("#sitebodyoverlay").on("click", function(){
 			menuHide();
 		});
-	  jQuery("#close-mb-menu").on("click", function(){   
+	  jQuery("#close-mb-menu").on("click", function(){
 		menuHide();
 	  });
 		//Back to top button click
-		jQuery("#back-to-top").on("click", function(){   
+		jQuery("#back-to-top").on("click", function(){
 			jQuery("html, body").animate({ scrollTop: 0 }, 600);
 			return false;
 		});
-		
+
 		//call dropdow category toolbar filter
 		dropdowListClick('.cate-filter-content', 'ul.product-type-filter');
 
 		//Call dropdow product option
 		dropdowListClick('.options-col', 'ul.po-list');
-		  
+
 		//Product detail images slide
 		jQuery('.ideals-w').owlCarousel({
 			items : 1,
@@ -145,7 +145,7 @@
 			navigationText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 			rewindNav : true,
 			scrollPerPage : false,
-		 
+
 			//Pagination
 			pagination : false,
 			paginationNumbers: false,
@@ -155,10 +155,10 @@
 			stopOnHover : false,
 			singleItem:true
 		});
-		  
+
 		//product detail option selected
 		$(function(){
-			jQuery(".po-list li span").on("click", function(){   
+			jQuery(".po-list li span").on("click", function(){
 			  var span = $(this).clone();
 			  var options_col = $(this).closest('.options-col');
 			  span.attr('class','cur-option-val');
@@ -169,8 +169,8 @@
 	//Footer slide on mobile
 	function mobileFooterSlide() {
 	  var checkWidth = jQuery(window).width();
-	  if(checkWidth < 768) {
-		jQuery(".footer-col h2").on("click", function(){    
+	 /* if(checkWidth < 768) {
+		jQuery(".footer-col h2").on("click", function(){
 		  //slide up all the link lists
 		  jQuery(".footer-col .footer-content").slideUp(200);
 		  //slide down the link list below the h3 clicked - only if its closed
@@ -179,7 +179,7 @@
 			jQuery(this).next().slideDown();
 		  }
 		});
-	  }
+  }*/
 	}
 	//function show and hide mobile menu
 	var isMenuShowing = false;
@@ -203,13 +203,13 @@
 	/* jQuery(window).resize(mobileFooterSlide); */
 	//Drop down select list function
 	function dropdowListClick(hover, dropdow){
-		jQuery(hover).on("click", function(){   
+		jQuery(hover).on("click", function(){
 		jQuery(this).find(dropdow).toggle(200);
 	  });
 	}
 	//Change option selected
 	function optionSelected(selected, current){
-		jQuery(selected).on("click", function(){  
+		jQuery(selected).on("click", function(){
 		var dataO = jQuery(this).attr("data-o");
 		var valueSelected = jQuery(this).text();
 		var dataOC = jQuery(current).attr("data-o");

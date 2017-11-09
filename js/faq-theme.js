@@ -191,7 +191,7 @@
 	});
 	function mobileFooterSlide() {
 	  var checkWidth = jQuery(window).width();
-
+/*
 	  if(checkWidth < 768) {
 		jQuery(".footer-col h2").on("click", function(){
 		  //slide up all the link lists
@@ -202,7 +202,7 @@
 			jQuery(this).next().slideDown();
 		  }
 		});
-	  }
+  }*/
 	}
 	//function show and hide mobile menu
 	var isMenuShowing = false;
