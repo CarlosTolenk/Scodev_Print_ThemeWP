@@ -114,7 +114,7 @@ function scodev_scripts(){
 
   add_action( 'init', 'scodev_menus');
 
-//Filtro para darle al menu
+//************************Filtro para darle al menu**************************//
   function agregar_clases_li($classes, $item, $args, $depth) {
       if($args->theme_location == 'header-menu') {
           $classes[] = 'level0 parent col1 all-product hd-pd';
@@ -123,7 +123,7 @@ function scodev_scripts(){
   }
   add_filter('nav_menu_css_class', 'agregar_clases_li', 1, 4);
 
-
+//*************************Filtro para las categorias***************************//
 
 
 
@@ -457,6 +457,274 @@ add_action( 'init', 'our_testimoniales', 0 );
 }
 
 
-//***************************Anexar plugins*******************************
+//***************************Advanced custom fields*******************************
+define( 'ACF_LITE', true );
+
+  include_once('advanced-custom-fields/acf.php');
+
+  if(function_exists("register_field_group"))
+  {
+  	register_field_group(array (
+  		'id' => 'acf_anexar-informacion-al-slider',
+  		'title' => 'Anexar información al Slider',
+  		'fields' => array (
+  			array (
+  				'key' => 'field_59fa76173d11e',
+  				'label' => 'Titulo',
+  				'name' => 'titulo',
+  				'type' => 'text',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'none',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59fa6fedf6803',
+  				'label' => 'Información ',
+  				'name' => 'informacion_',
+  				'type' => 'text',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => 'Información a presentar junto con la imagen',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'none',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59fa706cf6804',
+  				'label' => 'Accion',
+  				'name' => 'accion',
+  				'type' => 'text',
+  				'instructions' => 'Link para acccion',
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'html',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59fa70abf6805',
+  				'label' => 'imagen destacada',
+  				'name' => 'imagen_destacada',
+  				'type' => 'image',
+  				'required' => 1,
+  				'save_format' => 'id',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  		),
+  		'location' => array (
+  			array (
+  				array (
+  					'param' => 'post_type',
+  					'operator' => '==',
+  					'value' => 'slider',
+  					'order_no' => 0,
+  					'group_no' => 0,
+  				),
+  			),
+  		),
+  		'options' => array (
+  			'position' => 'acf_after_title',
+  			'layout' => 'default',
+  			'hide_on_screen' => array (
+  				0 => 'custom_fields',
+  				1 => 'discussion',
+  				2 => 'comments',
+  				3 => 'revisions',
+  				4 => 'send-trackbacks',
+  			),
+  		),
+  		'menu_order' => 0,
+  	));
+  	register_field_group(array (
+  		'id' => 'acf_capacidad',
+  		'title' => 'Capacidad',
+  		'fields' => array (
+  			array (
+  				'key' => 'field_59ff9745dc007',
+  				'label' => 'color ',
+  				'name' => 'color_',
+  				'type' => 'text',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'html',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59ff9751dc008',
+  				'label' => 'porcentaje ',
+  				'name' => 'porcentaje_',
+  				'type' => 'number',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'min' => '',
+  				'max' => '',
+  				'step' => '',
+  			),
+  		),
+  		'location' => array (
+  			array (
+  				array (
+  					'param' => 'post_type',
+  					'operator' => '==',
+  					'value' => 'capacity_our',
+  					'order_no' => 0,
+  					'group_no' => 0,
+  				),
+  			),
+  		),
+  		'options' => array (
+  			'position' => 'normal',
+  			'layout' => 'no_box',
+  			'hide_on_screen' => array (
+  			),
+  		),
+  		'menu_order' => 0,
+  	));
+  	register_field_group(array (
+  		'id' => 'acf_servicios',
+  		'title' => 'Servicios',
+  		'fields' => array (
+  			array (
+  				'key' => 'field_59fcfae76f0a4',
+  				'label' => 'Link',
+  				'name' => 'link_',
+  				'type' => 'text',
+  				'instructions' => 'Nombre del servicio',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'none',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59fcfb126f0a5',
+  				'label' => 'imagen destacada',
+  				'name' => 'imagen_destacada',
+  				'type' => 'image',
+  				'required' => 1,
+  				'save_format' => 'url',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  		),
+  		'location' => array (
+  			array (
+  				array (
+  					'param' => 'post_type',
+  					'operator' => '==',
+  					'value' => 'service_category',
+  					'order_no' => 0,
+  					'group_no' => 0,
+  				),
+  			),
+  		),
+  		'options' => array (
+  			'position' => 'normal',
+  			'layout' => 'no_box',
+  			'hide_on_screen' => array (
+  				0 => 'featured_image',
+  			),
+  		),
+  		'menu_order' => 0,
+  	));
+  	register_field_group(array (
+  		'id' => 'acf_testimonios',
+  		'title' => 'Testimonios',
+  		'fields' => array (
+  			array (
+  				'key' => 'field_5a00d814cea09',
+  				'label' => 'prof',
+  				'name' => 'prof_',
+  				'type' => 'text',
+  				'required' => 1,
+  				'default_value' => '',
+  				'placeholder' => '',
+  				'prepend' => '',
+  				'append' => '',
+  				'formatting' => 'html',
+  				'maxlength' => '',
+  			),
+  			array (
+  				'key' => 'field_59ff951517ca9',
+  				'label' => 'proyecto_1',
+  				'name' => 'proyecto_1',
+  				'type' => 'image',
+  				'required' => 1,
+  				'save_format' => 'url',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  			array (
+  				'key' => 'field_59ff952e17caa',
+  				'label' => 'proyecto_2',
+  				'name' => 'proyecto_2',
+  				'type' => 'image',
+  				'required' => 1,
+  				'save_format' => 'url',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  			array (
+  				'key' => 'field_59ff95580e7e4',
+  				'label' => 'proyecto_3',
+  				'name' => 'proyecto_3',
+  				'type' => 'image',
+  				'required' => 1,
+  				'save_format' => 'url',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  			array (
+  				'key' => 'field_59ff953a17cab',
+  				'label' => 'proyecto_4',
+  				'name' => 'proyecto_4',
+  				'type' => 'image',
+  				'save_format' => 'object',
+  				'preview_size' => 'thumbnail',
+  				'library' => 'all',
+  			),
+  		),
+  		'location' => array (
+  			array (
+  				array (
+  					'param' => 'post_type',
+  					'operator' => '==',
+  					'value' => 'testimoniales_our',
+  					'order_no' => 0,
+  					'group_no' => 0,
+  				),
+  			),
+  		),
+  		'options' => array (
+  			'position' => 'normal',
+  			'layout' => 'no_box',
+  			'hide_on_screen' => array (
+  			),
+  		),
+  		'menu_order' => 0,
+  	));
+  }
+
+
+
+
+
+
+
 
  ?>

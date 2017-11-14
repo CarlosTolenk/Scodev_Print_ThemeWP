@@ -348,40 +348,35 @@
             <i class="fa fa-star"></i>
           </span>
         <ul id="selection-category">
-          <li class="active"><a data-toggle="tab" href="#tab11">All projects</a></li>
-          <li><a data-toggle="tab" href="#tab21">Leaflets & Flyers</a></li>
-          <li><a data-toggle="tab" href="#tab31" class="last">Logo</a></li>
-          <li><a data-toggle="tab" href="#tab41" class="last">Stationary</a></li>
-          <li><a data-toggle="tab" href="#tab51" class="last">3d product</a></li>
-          <li><a data-toggle="tab" href="#tab61" class="last">Presentation</a></li>
-          <li><a data-toggle="tab" href="#tab71" class="last">Brochure</a></li>
-          <li><a data-toggle="tab" href="#tab81" class="last">Ecommerce</a></li>
+
+          <li class="active"><a data-toggle="tab">All projects</a></li>
+          <?php $category_ids = get_terms();
+            $id_s = 11;
+            $args = array( 'orderby' => 'slug', 'parent' => 0, 'title_li' => false, 'style' => 'list',);
+            $categories = get_categories( $args );
+            foreach ( $categories as $category )
+             {
+               echo '<li id="' . "tab-".$id_s . '" ><a href="' . "#tab".$id_s .'" data-toggle="tab">'
+                . $category->name . '</a></li>';
+                  $id_s = $id_s+10;
+
+              }
+          ?>
         </ul>
       </div>
 
       <div class="tab-content">
-
-        <?php echo do_shortcode(''); ?>
-
-
-
-
-
-        <div class="tab-pane active" id="tab31">
+        <div class="tab-pane active" id="tab11">
           <?php
-           $args = array('cat' => 6);
+           $args = array('cat' => 10);
            $category_posts = new WP_Query($args);
-
            if($category_posts->have_posts()) :
               while($category_posts->have_posts()) :
                  $category_posts->the_post();
-        ?>
+          ?>
 
           <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
             <div class="w-block-recent">
-
-
-
               <div class="image-recent">
                 <a href="#">
                   <?php the_post_thumbnail(); ?>
@@ -400,6 +395,72 @@
           </div>
             <?php endwhile; endif;  ?>
         </div>
+        <div class="tab-pane active" id="tab21">
+          <?php
+           $args = array('cat' => 6);
+           $category_posts = new WP_Query($args);
+           if($category_posts->have_posts()) :
+              while($category_posts->have_posts()) :
+                 $category_posts->the_post();
+          ?>
+
+          <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
+            <div class="w-block-recent">
+              <div class="image-recent">
+                <a href="#">
+                  <?php the_post_thumbnail(); ?>
+                </a>
+              </div>
+              <div class="info-recent">
+                <h2 class="title"><?php the_title() ?></h2>
+                <div class="text-recent">
+                  <p>
+                    <?php the_content() ?>
+                  </p>
+                </div>
+                <!--<a href="#" class="read-more">read more</a>-->
+              </div>
+            </div>
+          </div>
+            <?php endwhile; endif;  ?>
+        </div>
+        <div class="tab-pane active" id="tab31">
+          <?php
+           $args = array('cat' => 1);
+           $category_posts = new WP_Query($args);
+           if($category_posts->have_posts()) :
+              while($category_posts->have_posts()) :
+                 $category_posts->the_post();
+          ?>
+
+          <div class="col-md-4 col-sm-6 col-xs-6 block-recent">
+            <div class="w-block-recent">
+              <div class="image-recent">
+                <a href="#">
+                  <?php the_post_thumbnail(); ?>
+                </a>
+              </div>
+              <div class="info-recent">
+                <h2 class="title"><?php the_title() ?></h2>
+                <div class="text-recent">
+                  <p>
+                    <?php the_content() ?>
+                  </p>
+                </div>
+                <!--<a href="#" class="read-more">read more</a>-->
+              </div>
+            </div>
+          </div>
+            <?php endwhile; endif;  ?>
+        </div>
+
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
